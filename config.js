@@ -1,5 +1,5 @@
 const bot = {
-  token: '',  Т
+  token: '',
   id: 523378715
 }
 /*

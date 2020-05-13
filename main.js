@@ -51,6 +51,7 @@ st.hear(/^\!(?:рег|регистрация|reg|registration)$/i, async ctx => 
       name: `${l.first_name} ${l.last_name}`,
       push: `[id${id}|${l.first_name} ${l.last_name}]`
     })
+    require('fs').writeFileSync('./user.json', JSON.stringify(user, null, '\t')); // Сохраняем "Базу Данных".
     return ctx.send(`Я [id${id}|Тебя] успешно зарегистрировал. :)`);
   } else {
     return ctx.send(`[id${id}|Ты] уже зареган. :)`);

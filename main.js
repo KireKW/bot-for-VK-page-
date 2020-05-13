@@ -47,7 +47,7 @@ st.hear(/^\!(?:рег|регистрация|reg|registration)$/i, async ctx => 
       id: id,
       first_name: l.first_name,
       last_name: l.last_name,
-      sex: l.sex,
+      sex: !l.sex ? 0 : l.sex,
       name: `${l.first_name} ${l.last_name}`,
       push: `[id${id}|${l.first_name} ${l.last_name}]`
     })
